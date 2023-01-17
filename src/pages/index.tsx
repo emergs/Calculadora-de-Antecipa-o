@@ -6,6 +6,10 @@ const MainPage = () => {
 
   const { getData } = useContext(MainPageContext)
 
+  useEffect(() => {
+    getData()
+  }, [])
+
   return (
     <Container />
   )

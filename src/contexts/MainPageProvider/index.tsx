@@ -25,7 +25,6 @@ const MainPageProvider = ({ children }: IChildren) => {
       .catch((error) => console.log(error))
   }
 
-
   return (
     <MainPageContext.Provider value={{ getData, listDays }}>
       {children}
