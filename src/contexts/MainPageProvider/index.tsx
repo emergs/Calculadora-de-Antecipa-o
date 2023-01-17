@@ -19,7 +19,8 @@ const MainPageProvider = ({ children }: IChildren) => {
     await axios.post('https://frontend-challenge-7bu3nxh76a-uc.a.run.app', {
       amount: 1500,
       installments: 3,
-      mdr: 10
+      mdr: 10,
+      days: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     })
       .then((response) => setListDays(response.data))
       .catch((error) => console.log(error))

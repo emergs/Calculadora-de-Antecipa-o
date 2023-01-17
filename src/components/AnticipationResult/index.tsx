@@ -3,25 +3,21 @@ import { MainPageContext } from "../../contexts/MainPageProvider"
 
 const AnticipationResult = () => {
   const { listDays } = useContext(MainPageContext)
-
-  // let valuesAnticipation = Object.keys(listDays);
-
-  // console.log(valuesAnticipation); // [4,93,10]
+  const valuesAnticipation = []
 
   for (const chave in listDays) {
     if (listDays.hasOwnProperty(chave)) {
-      console.log(`${chave}: ${listDays[chave]}`);
+      valuesAnticipation.push(<li>${chave}: ${listDays[chave]}</li>);
     }
   }
 
   return (
     <ul>
-      {/* {
+      {
         valuesAnticipation?.map((elem) => {
-          return <li>{elem}</li>
+          return <li key={elem.key}>{elem}</li>
         })
-      } */}
-      <li>jjj</li>
+      }
     </ul>
   )
 }
