@@ -1,15 +1,10 @@
 import { ReactNode } from "react"
+import { IChildren } from "../../contexts/MainPageProvider"
 import { BoxStyle } from "./style"
 
-interface IChildrenBox {
-  children: ReactNode
-  color?: string | undefined
-  property?: string | undefined
-}
-
-const Box = ({ property, color, children }: IChildrenBox) => {
+const Box = ({children }: IChildren) => {
   return (
-    <BoxStyle color={color} property={property}>
+    <BoxStyle>
       {children}
     </BoxStyle>
   )

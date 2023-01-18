@@ -10,6 +10,11 @@ const Content = styled.main`
     justify-content: space-between;
     align-items: center;
   }
+
+  background-color:yellow;
+  display:flex;
+  height: 40rem;
+
 `
 
 export { Content }
