@@ -4,12 +4,8 @@ import * as yup from 'yup'
 import { useForm } from "react-hook-form";
 import {yupResolver} from '@hookform/resolvers/yup'
 import { Input } from "../Input/style";
-
-interface IForm{
-  saleValue:number
-  installments:number
-  mdrPercentage:number
-}
+import { IForm, MainPageContext } from "../../contexts/MainPageProvider";
+import { useContext } from "react";
 
 const schema = yup.object({
   saleValue: yup.number().positive().integer().required(),
@@ -19,12 +15,12 @@ const schema = yup.object({
 
 
 const Form = ()=>{
-
+  const {getData} = useContext(MainPageContext)
   const { register, handleSubmit, formState:{ errors } } = useForm<IForm>({
     resolver: yupResolver(schema)
   });
 
-  const onSubmit = (data:IForm)=> console.log(data);
+  const onSubmit = (data:IForm)=> getData(data);
   
 
     return(

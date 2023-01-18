@@ -1,12 +1,18 @@
 import { createContext, ReactNode, useState } from "react"
 import axios from 'axios'
 
+export interface IForm{
+  saleValue:number
+  installments:number
+  mdrPercentage:number
+}
+
 export interface IChildren {
   children: ReactNode
 }
 
 interface IMainPageContext {
-  getData: () => void
+  getData: (data:IForm) => void
   listDays: any
 }
 
@@ -15,12 +21,11 @@ export const MainPageContext = createContext<IMainPageContext>({} as IMainPageCo
 const MainPageProvider = ({ children }: IChildren) => {
   const [listDays, setListDays] = useState<any>([])
 
-  const getData = async () => {
+  const getData = async (data:IForm) => {
     await axios.post('https://frontend-challenge-7bu3nxh76a-uc.a.run.app', {
-      amount: 1500,
-      installments: 3,
-      mdr: 10,
-      days: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      amount: data.saleValue,
+      installments: data.installments,
+      mdr: data.mdrPercentage
     })
       .then((response) => setListDays(response.data))
       .catch((error) => console.log(error))
