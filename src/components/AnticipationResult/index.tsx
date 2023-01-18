@@ -7,7 +7,7 @@ const AnticipationResult = () => {
 
   for (const chave in listDays) {
     if (listDays.hasOwnProperty(chave)) {
-      valuesAnticipation.push(<li>${chave}: ${listDays[chave]}</li>);
+      valuesAnticipation.push(<li>{chave}: R$ {listDays[chave]}</li>);
     }
   }
 

@@ -6,16 +6,18 @@ const GlobalStyle = createGlobalStyle`
     --secondary-color: #475160;
     --tertiary-color: #f5f5f5;
 
-    --title1: bold 28px 'Inter',sans-serif;
+    --title1: bold 1.75rem 'Inter',sans-serif;
     --title2:bold 24px 'Inter',sans-serif;
-    --text:normal 18px 'Inter',sans-serif;
-    --label:normal 14px 'Inter',sans-serif;
-    --span:normal 10px 'Inter',sans-serif;
+    --text:normal 0.9rem 'Inter',sans-serif;
+    --label:normal 1rem 'Inter',sans-serif;
+    --span:italic 0.75rem 'Inter',sans-serif;
   }
   
   *{
     margin: 0;
     padding: 0;
+    list-style: none;
+    box-sizing: border-box;
   }
 
   #root{
