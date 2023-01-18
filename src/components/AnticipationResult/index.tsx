@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { MainPageContext } from "../../contexts/MainPageProvider"
+import { Description, DiscountValue, ListGroup, ListItem } from "./style"
 
 const AnticipationResult = () => {
   const { listDays } = useContext(MainPageContext)
@@ -7,18 +8,24 @@ const AnticipationResult = () => {
 
   for (const chave in listDays) {
     if (listDays.hasOwnProperty(chave)) {
-      valuesAnticipation.push(<li>{chave}: R$ {listDays[chave]}</li>);
+      chave == "1" ?
+        valuesAnticipation.push([`Amanhã:  `, `R$ ${listDays[chave]},00`])
+        :
+        valuesAnticipation.push([`Em ${chave} dias:  `, `R$ ${listDays[chave]},00`])
     }
   }
 
   return (
-    <ul>
+    <ListGroup>
       {
         valuesAnticipation?.map((elem) => {
-          return <li key={elem.key}>{elem}</li>
+          return <ListItem>
+            <Description>{elem[0]}</Description>
+            <DiscountValue>{elem[1]}</DiscountValue>
+          </ListItem>
         })
       }
-    </ul>
+    </ListGroup>
   )
 }
 

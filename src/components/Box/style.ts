@@ -9,6 +9,7 @@ const BoxStyle = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 5px;
   }
 
   display: flex;

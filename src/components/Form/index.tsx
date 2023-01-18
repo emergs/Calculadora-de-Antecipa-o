@@ -9,9 +9,9 @@ import { useContext } from "react";
 import FormStyle from "./style";
 
 const schema = yup.object({
-  saleValue: yup.number().positive().integer().required(),
-  installments: yup.number().positive().integer().max(12).required(),
-  mdrPercentage: yup.number().positive().integer().required(),
+  saleValue: yup.number().positive().integer().required("Preenchimento Obrigatorio"),
+  installments: yup.number().positive().integer().max(12).required("Preenchimento Obrigatorio"),
+  mdrPercentage: yup.number().positive().integer().required("Preenchimento Obrigatorio"),
 }).required();
 
 
