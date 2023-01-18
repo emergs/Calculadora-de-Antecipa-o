@@ -6,6 +6,7 @@ import {yupResolver} from '@hookform/resolvers/yup'
 import { Input } from "../Input/style";
 import { IForm, MainPageContext } from "../../contexts/MainPageProvider";
 import { useContext } from "react";
+import FormStyle from "./style";
 
 const schema = yup.object({
   saleValue: yup.number().positive().integer().required(),
@@ -24,6 +25,7 @@ const Form = ()=>{
   
 
     return(
+      <FormStyle>
         <form onSubmit={handleSubmit(onSubmit)}>
         <h1>Simule sua Antecipação</h1>
         <Box>
@@ -44,6 +46,7 @@ const Form = ()=>{
         </Box>
         <button>Enviar</button>
         </form>
+        </FormStyle>
     )
 }
 

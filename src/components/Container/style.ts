@@ -11,9 +11,10 @@ const Content = styled.main`
     align-items: center;
   }
 
-  background-color:yellow;
+  background-color: var(--secondary-color);
   display:flex;
   height: 40rem;
+  width: 80%;
 
 `
 
