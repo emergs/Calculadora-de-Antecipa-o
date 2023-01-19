@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const BoxResultsStyle = styled.section`
+      border-top: 0.5px solid var(--secondary-color);
       height: 40%;
       width: 100%;
       padding: 5% 10%;

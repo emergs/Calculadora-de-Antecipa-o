@@ -9,9 +9,9 @@ import { useContext } from "react";
 import FormStyle from "./style";
 
 const schema = yup.object({
-  saleValue: yup.number().positive().integer().required("Preenchimento Obrigatorio"),
-  installments: yup.number().positive().integer().max(12).required("Preenchimento Obrigatorio"),
-  mdrPercentage: yup.number().positive().integer().required("Preenchimento Obrigatorio"),
+  saleValue: yup.string().required("Preenchimento Obrigatorio"),
+  installments: yup.string().required("Preenchimento Obrigatorio"),
+  mdrPercentage: yup.string().required("Preenchimento Obrigatorio"),
 }).required();
 
 
@@ -30,21 +30,21 @@ const Form = () => {
         <h1>Simule sua Antecipação</h1>
         <Box>
           <Label>Informe o valor da venda</Label>
-          <Input {...register("saleValue")} />
+          <Input {...register("saleValue")} placeholder="Ex: 1000" />
           <p>{errors.saleValue?.message}</p>
         </Box>
         <Box>
           <Label>Em quantas parcelas</Label>
-          <Input {...register("installments")} />
+          <Input {...register("installments")} placeholder="Ex: 10" />
           <span>Máximo 12 parcelas</span>
           <p>{errors.installments?.message}</p>
         </Box>
         <Box>
           <Label>Informe o percentual de MDR</Label>
-          <Input {...register("mdrPercentage")} />
+          <Input {...register("mdrPercentage")} placeholder="Ex: 10" />
           <p>{errors.mdrPercentage?.message}</p>
         </Box>
-        <button>Enviar</button>
+        <button>Simular</button>
       </form>
     </FormStyle>
   )

@@ -3,8 +3,8 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   :root{
     --primary-color: #ffffff;
-    --secondary-color: #000000;
-    --tertiary-color: #f5f5f5;
+    --secondary-color: #2d67df;
+    --tertiary-color: #93969a;
 
     --title1: bold 1.75rem 'Inter',sans-serif;
     --title2:bold 24px 'Inter',sans-serif;
@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-color:var(--tertiary-color);
+    background-color:var(--primary-color);
   }
 `
 

@@ -20,6 +20,8 @@ const FormStyle = styled.section`
 
     Label{
     font: var(--text);
+    color: gray;
+    font-weight: bold;
     }
 
     span{
@@ -30,6 +32,20 @@ const FormStyle = styled.section`
     width: 80%;
     margin: 0 10%;
     height: 35px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 1px var(--secondary-color);
+    background-color: var(--secondary-color);
+    font: var(--label);
+    color: var(--primary-color);
+    }
+
+    button:hover{
+      cursor: pointer;
+    }
+
+    p{
+      color: red;
     }
 
     @media(min-width:768px){
