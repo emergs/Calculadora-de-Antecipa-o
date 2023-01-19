@@ -12,6 +12,7 @@ const schema = yup.object({
   saleValue: yup.string().required("Preenchimento Obrigatorio"),
   installments: yup.string().required("Preenchimento Obrigatorio"),
   mdrPercentage: yup.string().required("Preenchimento Obrigatorio"),
+  period: yup.string()
 }).required();
 
 
@@ -43,6 +44,11 @@ const Form = () => {
           <Label>Informe o percentual de MDR</Label>
           <Input {...register("mdrPercentage")} placeholder="Ex: 10" />
           <p>{errors.mdrPercentage?.message}</p>
+        </Box>
+        <Box>
+          <Label>Informe o período</Label>
+          <Input {...register("period")} placeholder="Ex: 10" />
+          <p>{errors.period?.message}</p>
         </Box>
         <button>Simular</button>
       </form>
