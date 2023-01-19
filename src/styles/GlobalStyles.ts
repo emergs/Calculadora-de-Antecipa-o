@@ -2,8 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   :root{
-    --primary-color: #93969a;
-    --secondary-color: #475160;
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
     --tertiary-color: #f5f5f5;
 
     --title1: bold 1.75rem 'Inter',sans-serif;
@@ -26,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
     align-items: center;
     width: 100vw;
     height: 100vh;
+    background-color:var(--tertiary-color);
   }
 `
 

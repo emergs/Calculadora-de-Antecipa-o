@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const BoxStyle = styled.div`
-  @media(max-width:768px){
     background-color:'inherit';
     width: 100%;
     height: 'auto';
@@ -10,9 +9,9 @@ const BoxStyle = styled.div`
     flex-direction: column;
     justify-content: center;
     gap: 5px;
-  }
 
-  display: flex;
-  flex-direction:column;
+  @media(min-width:768px){
+
+  }
 `
 export { BoxStyle }
