@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 const Content = styled.main`
   background-color: var(--primary-color);
-  width: 90%;
-  height: 800px;
   display: flex;
+  margin: 50px 0;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;

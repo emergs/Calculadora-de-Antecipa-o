@@ -9,11 +9,11 @@ import { useContext } from "react";
 import FormStyle from "./style";
 
 const schema = yup.object({
-  saleValue: yup.string().required("Preenchimento Obrigatorio"),
+  amount: yup.string().required("Preenchimento Obrigatorio"),
   installments: yup.string().required("Preenchimento Obrigatorio"),
-  mdrPercentage: yup.string().required("Preenchimento Obrigatorio"),
-  period: yup.string()
-}).required();
+  mdr: yup.string().required("Preenchimento Obrigatorio"),
+  days: yup.string()
+});
 
 
 const Form = () => {
@@ -31,8 +31,8 @@ const Form = () => {
         <h1>Simule sua Antecipação</h1>
         <Box>
           <Label>Informe o valor da venda</Label>
-          <Input {...register("saleValue")} placeholder="Ex: 1000" />
-          <p>{errors.saleValue?.message}</p>
+          <Input {...register("amount")} placeholder="Ex: 1000" />
+          <p>{errors.amount?.message}</p>
         </Box>
         <Box>
           <Label>Em quantas parcelas</Label>
@@ -42,13 +42,13 @@ const Form = () => {
         </Box>
         <Box>
           <Label>Informe o percentual de MDR</Label>
-          <Input {...register("mdrPercentage")} placeholder="Ex: 10" />
-          <p>{errors.mdrPercentage?.message}</p>
+          <Input {...register("mdr")} placeholder="Ex: 10" />
+          <p>{errors.mdr?.message}</p>
         </Box>
         <Box>
-          <Label>Informe o período</Label>
-          <Input {...register("period")} placeholder="Ex: 10" />
-          <p>{errors.period?.message}</p>
+          <Label>Informe o período (em dias separado por vírgula)</Label>
+          <Input {...register("days")} placeholder="Ex: 10,20,30" />
+          <p>{errors.days?.message}</p>
         </Box>
         <button>Simular</button>
       </form>

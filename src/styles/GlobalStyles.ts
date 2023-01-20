@@ -20,12 +20,17 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  body{
+    display: flex;
+    align-items: center;
+    overflow-y: auto;
+  }
+
   #root{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
     background-color:var(--primary-color);
   }
 `

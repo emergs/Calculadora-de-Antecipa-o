@@ -7,7 +7,7 @@ import { Content } from "./style"
 const Container = () => {
   return (
     <Content>
-      <Form/>
+      <Form />
       <BoxResults >
         <h1>Voce recebera</h1>
         <AnticipationResult />
