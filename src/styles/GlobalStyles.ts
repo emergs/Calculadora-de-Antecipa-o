@@ -32,6 +32,10 @@ const GlobalStyle = createGlobalStyle`
     justify-content: center;
     align-items: center;
     background-color:var(--primary-color);
+
+    @media(min-width: 768px){
+      height: 100vh;
+    }
   }
 `
 

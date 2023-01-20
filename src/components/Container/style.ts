@@ -12,7 +12,12 @@ const Content = styled.main`
 
   @media(min-width: 768px){
     display: flex;
-
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: orange;
+    width: 60%;
+    height: 35rem;
   }
 `
 

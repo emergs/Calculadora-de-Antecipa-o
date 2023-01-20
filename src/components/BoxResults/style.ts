@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const BoxResultsStyle = styled.section`
-      border-top: 0.5px solid var(--secondary-color);
-      height: 40%;
+      background-color: #dce3ef;
+      height: auto;
       width: 100%;
       padding: 5% 10%;
 
@@ -22,8 +22,12 @@ const BoxResultsStyle = styled.section`
         font: var(--label);
       }
 
-    @media(min-width: 768px){
-
+      @media(min-width:768px){
+      height: 100%;
+      padding: 30px 20px;
+      background-color: #dce3ef;
+      text-align: center;
+      width: 45%;
     }
 
 `

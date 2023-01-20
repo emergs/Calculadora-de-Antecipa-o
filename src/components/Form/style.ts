@@ -49,7 +49,9 @@ const FormStyle = styled.section`
     }
 
     @media(min-width:768px){
-
+      height: 100%;
+      padding: 20px 0;
+      width: 55%;
     }
 `
 
