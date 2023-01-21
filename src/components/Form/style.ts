@@ -31,6 +31,7 @@ const FormStyle = styled.section`
     button{
     width: 80%;
     margin: 0 10%;
+    margin-top: 2rem;
     height: 35px;
     border: none;
     border-radius: 5px;

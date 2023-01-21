@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
     --primary-color: #ffffff;
     --secondary-color: #2d67df;
     --tertiary-color: #93969a;
+    --orange : #ffa500;
 
     --title1: bold 1.75rem 'Inter',sans-serif;
     --title2:bold 24px 'Inter',sans-serif;

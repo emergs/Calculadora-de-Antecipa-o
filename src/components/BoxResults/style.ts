@@ -3,6 +3,7 @@ import styled from "styled-components";
 const BoxResultsStyle = styled.section`
       background-color: #dce3ef;
       height: auto;
+      min-height: 400px;
       width: 100%;
       padding: 5% 10%;
 
@@ -15,7 +16,8 @@ const BoxResultsStyle = styled.section`
         height: 90%;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: flex-start;
+        gap: 5px;
       }
 
       ul li{

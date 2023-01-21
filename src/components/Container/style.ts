@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Content = styled.main`
-  background-color: var(--primary-color);
+  background-color: var(--orange);
   display: flex;
   margin: 50px 0;
   flex-direction: column;
@@ -15,8 +15,8 @@ const Content = styled.main`
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    background-color: orange;
     width: 60%;
+    max-width: 1200px;
     height: 35rem;
   }
 `

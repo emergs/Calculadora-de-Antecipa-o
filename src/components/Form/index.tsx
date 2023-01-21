@@ -27,7 +27,7 @@ const Form = () => {
 
   return (
     <FormStyle>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onChange={handleSubmit(onSubmit)}>
         <h1>Simule sua Antecipação</h1>
         <Box>
           <Label>Informe o valor da venda</Label>
@@ -50,7 +50,6 @@ const Form = () => {
           <Input {...register("days")} placeholder="Ex: 10,20,30" />
           <p>{errors.days?.message}</p>
         </Box>
-        <button>Simular</button>
       </form>
     </FormStyle>
   )
