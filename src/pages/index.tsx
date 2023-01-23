@@ -1,6 +1,9 @@
+import Container from "../components/Container"
+
 const MainPage = () => {
+
   return (
-    <h1>MainPage</h1>
+    <Container />
   )
 }
 
