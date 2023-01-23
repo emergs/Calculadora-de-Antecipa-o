@@ -15,7 +15,7 @@ const FormStyle = styled.section`
     
     h1{
     padding-left: 10%;
-    font: var(--title1);
+    font: var(--title2);
     }
 
     Label{
@@ -26,6 +26,10 @@ const FormStyle = styled.section`
 
     span{
     font: var(--span);
+    }
+
+    button:last-child{
+      height: 50px;
     }
 
     button{

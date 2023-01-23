@@ -5,44 +5,60 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Input } from "../Input/style";
 import { IForm, MainPageContext } from "../../contexts/MainPageProvider";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import FormStyle from "./style";
+import HeaderForm from "../HeaderForm";
+import TestButtonGroup from "../TestButtonGroup";
 
-const schema = yup.object({
-  amount: yup.string().required("Preenchimento Obrigatorio"),
-  installments: yup.string().required("Preenchimento Obrigatorio"),
-  mdr: yup.string().required("Preenchimento Obrigatorio"),
+yup.setLocale({
+  number: {
+    min: 'O numero deve ser maior ou igual a ${min}',
+    max: 'O numero deve ser menor ou igual a ${max}'
+  }
+})
+
+const schema = yup.object().shape({
+  amount: yup.number().typeError("Digite um numero válido").required().min(1000),
+  installments: yup.number().typeError("Digite um numero válido").required("Preenchimento Obrigatorio").max(12).min(1),
+  mdr: yup.number().typeError("Digite um numero válido").required("Preenchimento Obrigatorio").max(99),
   days: yup.string()
 });
 
-
 const Form = () => {
-  const { getData } = useContext(MainPageContext)
+
+  const {
+    getData,
+    testDelay,
+    chooseNameTheButton,
+    nameButton,
+    buttonTestIsActive
+  } = useContext(MainPageContext)
+
   const { register, handleSubmit, formState: { errors } } = useForm<IForm>({
     resolver: yupResolver(schema)
   });
 
-  const onSubmit = (data: IForm) => getData(data);
+  const onSubmit = (data: IForm) => nameButton == 'Simular' ? getData(data) : testDelay(data);
 
 
   return (
     <FormStyle>
-      <form onChange={handleSubmit(onSubmit)}>
-        <h1>Simule sua Antecipação</h1>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <HeaderForm />
         <Box>
           <Label>Informe o valor da venda</Label>
-          <Input {...register("amount")} placeholder="Ex: 1000" />
+          <Input type="number" {...register("amount")} placeholder="Ex: 1000" />
           <p>{errors.amount?.message}</p>
         </Box>
         <Box>
           <Label>Em quantas parcelas</Label>
-          <Input {...register("installments")} placeholder="Ex: 10" />
+          <Input type="number" {...register("installments")} placeholder="Ex: 10" />
           <span>Máximo 12 parcelas</span>
           <p>{errors.installments?.message}</p>
         </Box>
         <Box>
           <Label>Informe o percentual de MDR</Label>
-          <Input {...register("mdr")} placeholder="Ex: 10" />
+          <Input type="number" {...register("mdr")} placeholder="Ex: 10" />
           <p>{errors.mdr?.message}</p>
         </Box>
         <Box>
@@ -50,6 +66,12 @@ const Form = () => {
           <Input {...register("days")} placeholder="Ex: 10,20,30" />
           <p>{errors.days?.message}</p>
         </Box>
+        {
+          buttonTestIsActive ?
+            <TestButtonGroup />
+            :
+            <button onClick={(e) => chooseNameTheButton(e.target)} >Simular</button>
+        }
       </form>
     </FormStyle>
   )

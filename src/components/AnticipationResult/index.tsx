@@ -18,8 +18,8 @@ const AnticipationResult = () => {
   return (
     <ListGroup>
       {
-        valuesAnticipation?.map((elem) => {
-          return <ListItem>
+        valuesAnticipation?.map((elem, index) => {
+          return <ListItem key={index}>
             <Description>{elem[0]}</Description>
             <DiscountValue>{elem[1]}</DiscountValue>
           </ListItem>
